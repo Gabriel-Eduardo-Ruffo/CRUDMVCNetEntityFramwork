@@ -1,0 +1,33 @@
+﻿@Model List<CRUDMVCNetEntityFrameWork.Models.ViewModels.ListPersonsViewModel>
+@{
+    ViewBag.Title = "Mis Datos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="row" style="text-align:right; padding:5px;">
+    <a href="~/Persons/New" class="btn btn-primary">Nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table-responsive">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+            @foreach(var oPerson in Model)
+            {
+                <tr>
+                    <td>@oPerson.Id</td>
+                    <td>@oPerson.FirstName</td>
+                    <td>@oPerson.LastName</td>
+                    <td>@oPerson.Age</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</div>
